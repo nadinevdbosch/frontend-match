@@ -70,10 +70,9 @@ textarea {
     display: block;
     width: 200px;
     text-align: center;
-    position: absolute;
-    left: calc(50% - 100px);
-    right: calc(50% - 100px);
-    bottom: 30px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
     border: none;
 }
 
@@ -342,10 +341,9 @@ footer .taakbalk-optie-actief {
     display: block;
     width: 200px;
     text-align: center;
-    position: absolute;
-    left: calc(50% - 100px);
-    right: calc(50% - 100px);
-    bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
     border: none;
 }
 
@@ -404,6 +402,37 @@ footer .taakbalk-optie-actief {
 
 /* styling van mijn step-pogress-bar */
 
+.question {
+    margin-bottom: 100px;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.quiz-questions .button {
+    background-color: #1E1E1E;
+    color: white;
+    padding: 5px 0px;
+    border-radius: 20px;
+    margin: 0px 10px;
+
+}
+
+.quiz-questions .button:disabled {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.quiz-questions .button::hover{
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    margin-top: -60px;
+}
+
 
 .quiz-questions .container{
     display: flex;
@@ -445,6 +474,14 @@ footer .taakbalk-optie-actief {
 
 div.container.hidden {
     display: none ;
+}
+
+button.finish {
+    margin-top: 10px;
+}
+
+button.finish.hidden {
+    display: none !important;
 }
 
 /* opacicty regelen van de hartjes van de matches */
@@ -492,6 +529,8 @@ div.container.hidden {
 .honderd-procent {
     opacity: 1;
 }
+
+
 
 
 

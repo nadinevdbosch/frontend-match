@@ -55,16 +55,7 @@ express()
     .get("/my-profile/update", updateProfile)
     .get("/profiles/:naam", profile)
     .get("/quiz-intro", quizIntro)
-    .get("/question1", questionOne)
-    .get("/question2", questionTwo)
-    .get("/question3", questionThree)
-    .get("/question4", questionFour)
-    .get("/question5", questionFive)
-    .get("/question6", questionSix)
-    .get("/question7", questionSeven)
-    .get("/question8", questionEight)
-    .get("/question9", questionNine)
-    .get("/question10", questionTen)
+    .get("/questions", questions)
     .listen(port || 3000, () => console.log("listening at " + port));
 
 function startscreen(req, res) {
@@ -89,6 +80,12 @@ function add(req, res) {
     };
 
     res.redirect("/quiz-intro");
+
+}
+
+function questions(req, res) {
+
+    res.render("quiz-question");
 
 }
 
@@ -167,175 +164,22 @@ function profile(req, res, next) {
      });
 }
 
-
 var quizAnswers = [];
-var questionID;
-
-function questionOne(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 1}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionTwo(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 2}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            console.log(data)
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionThree(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 3}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionFour(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 4}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionFive(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 5}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionSix(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 6}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionSeven(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 7}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionEight(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 8}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionNine(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 9}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
-
-function questionTen(req, res, next) {
-    db.collection("questions-answers").findOne(
-        {"questionID": 10}, question);
-
-    function question(err, data) {
-        if (err) {
-            next(err);
-        } else {
-            questionID = data.questionID + 1;
-            res.render("quiz-question", {
-                question : data
-             });
-        }
-    }
-}
 
 function answer(req, res) {
-    quizAnswers.push(req.body.answer)
-    console.log(questionID)
-    if(questionID === 11) {
+
+        quizAnswers.push(req.body.answer1)
+        quizAnswers.push(req.body.answer2)
+        quizAnswers.push(req.body.answer3)
+        quizAnswers.push(req.body.answer4)
+        quizAnswers.push(req.body.answer5)
+        quizAnswers.push(req.body.answer6)
+        quizAnswers.push(req.body.answer7)
+        quizAnswers.push(req.body.answer8)
+        quizAnswers.push(req.body.answer9)
+        quizAnswers.push(req.body.answer10)
+
+
         dataMyProfile.antwoorden = quizAnswers
         req.session.user = dataMyProfile
         db.collection('users').insertOne(req.session.user, addUser);
@@ -348,17 +192,15 @@ function answer(req, res) {
             console.log(req.session.user)
             }
 
-    }
+
         quizAnswers = [];
         console.log(dataMyProfile);
         res.redirect("/profiles");
 
-    }else{
-        res.redirect("/question" + questionID + "?question=" + questionID);
-    }
-    console.log(questionID);
+
     console.log(quizAnswers);
 
+}
 }
 
 function deleteProfile(req, res) {

@@ -2,18 +2,135 @@
 
    <div class="quiz-questions">
      <img src="images/logo1.png" alt="logo van Match">
-     <p><%= question.question  %></p>
      <form action="/profiles" method="POST">
-        <input type="radio" id="a" name="answer" value="a">
-        <label for="a"><%= question.answer1  %></label><br>
-        <input type="radio" id="b" name="answer" value="b">
-        <label for="b"><%= question.answer2  %></label><br>
-        <input type="radio" id="c" name="answer" value="c">
-        <label for="c"><%= question.answer3  %></label><br>
-        <input type="radio" id="d" name="answer" value="d">
-        <label for="d"><%= question.answer4  %></label>
 
-        <button class="nextButton">Verder</button>
+        <div class="question active">
+            <p>Wat zou je meenemen naar een onbewoond eiland</p>
+            <input type="radio" id="answer1a" name="answer1" value="a">
+            <label for="answer1a">Vrienden en famile</label><br>
+            <input type="radio" id="answer1b" name="answer1" value="b">
+            <label for="answer1b">Een survival-kit</label><br>
+            <input type="radio" id="answer1c" name="answer1" value="c">
+            <label for="answer1c">Een hengel</label><br>
+            <input type="radio" id="answer1d" name="answer1" value="d">
+            <label for="answer1d">Heel veel eten en drinken</label>
+        </div>
+
+        <div class="question">
+            <p>Wat doe je het liefst op een vrije dag?</p>
+            <input type="radio" id="answer2a" name="answer2" value="a">
+            <label for="answer2a">Netflixen</label><br>
+            <input type="radio" id="answer2b" name="answer2" value="b">
+            <label for="answer2b">Sporten</label><br>
+            <input type="radio" id="answer2c" name="answer2" value="c">
+            <label for="answer2c">Afspreken met vrienden/familie</label><br>
+            <input type="radio" id="answer2d" name="answer2" value="d">
+            <label for="answer2d">Ik werk liever</label>
+        </div>
+
+       <div class="question">
+            <p>Hoe ziet jouw ideale vakantie eruit?</p>
+            <input type="radio" id="answer3a" name="answer3" value="a">
+            <label for="answer3a">Een zonvakantie</label><br>
+            <input type="radio" id="answer3b" name="answer3" value="b">
+            <label for="answer3b">Een actieve vakantie</label><br>
+            <input type="radio" id="answer3c" name="answer3" value="c">
+            <label for="answer3c">Een culturele vakantie</label><br>
+            <input type="radio" id="answer3d" name="answer3" value="d">
+            <label for="answer3d">Ik blijf liever thuis</label>
+       </div>
+
+        <div class="question">
+            <p>Wat is je favoriete eten?</p>
+            <input type="radio" id="answer4a" name="answer4" value="a">
+            <label for="answer4a">Pizza</label><br>
+            <input type="radio" id="answer4b" name="answer4" value="b">
+            <label for="answer4b">Stampot</label><br>
+            <input type="radio" id="answer4c" name="answer4" value="c">
+            <label for="answer4c">Frietjes</label><br>
+            <input type="radio" id="answer4d" name="answer4" value="d">
+            <label for="answer4d">Salade</label>
+        </div>
+
+        <div class="question">
+            <p>Wat voor muziek luister je het liefst?</p>
+            <input type="radio" id="answer5a" name="answer5" value="a">
+            <label for="answer5a">Pop</label><br>
+            <input type="radio" id="answer5b" name="answer5" value="b">
+            <label for="answer5b">Klassiek</label><br>
+            <input type="radio" id="answer5c" name="answer5" value="c">
+            <label for="answer5c">Techno</label><br>
+            <input type="radio" id="answer5d" name="answer5" value="d">
+            <label for="answer5d">Nederlandstalig</label>
+        </div>
+
+        <div class="question">
+            <p>Welk dier zou je het liefst willen zijn?</p>
+            <input type="radio" id="answer6a" name="answer6" value="a">
+            <label for="answer6a">Een koe</label><br>
+            <input type="radio" id="answer6b" name="answer6" value="b">
+            <label for="answer6b">Een tijger</label><br>
+            <input type="radio" id="answer6c" name="answer6" value="c">
+            <label for="answer6c">Een panda</label><br>
+            <input type="radio" id="answer6d" name="answer6" value="d">
+            <label for="answer6d">Een vlinder</label>
+        </div>
+
+        <div class="question">
+            <p>Welke superkracht zou je het liefst willen hebben</p>
+            <input type="radio" id="answer7a" name="answer7" value="a">
+            <label for="answer7a">Vliegen</label><br>
+            <input type="radio" id="answer7b" name="answer7" value="b">
+            <label for="answer7b">Tijdreizen</label><br>
+            <input type="radio" id="answer7c" name="answer7" value="c">
+            <label for="answer7c">Gedachten lezen</label><br>
+            <input type="radio" id="answer7d" name="answer7" value="d">
+            <label for="answer7d">Onzichtbaar zijn</label>
+        </div>
+
+       <div class="question">
+            <p>Wat is je favoriete drankje</p>
+            <input type="radio" id="answer8a" name="answer8" value="a">
+            <label for="answer8a">Een biertje</label><br>
+            <input type="radio" id="answer8b" name="answer8" value="b">
+            <label for="answer8b">Een wijntje</label><br>
+            <input type="radio" id="answer8c" name="answer8" value="c">
+            <label for="answer8c">Een cocktail</label><br>
+            <input type="radio" id="answer8d" name="answer8" value="d">
+            <label for="answer8d">Ik drink geen alcohol</label>
+       </div>
+
+        <div class="question">
+            <p>Hoeveel kinderen zou je willen</p>
+            <input type="radio" id="answer9a" name="answer9" value="a">
+            <label for="answer9a">Een biertje</label><br>
+            <input type="radio" id="answer9b" name="answer9" value="b">
+            <label for="answer9b">Een wijntje</label><br>
+            <input type="radio" id="answer9c" name="answer9" value="c">
+            <label for="answer9c">Een cocktail</label><br>
+            <input type="radio" id="answer9d" name="answer9" value="d">
+            <label for="answer9d">Ik drink geen alcohol</label>
+        </div>
+
+        <div class="question">
+            <p>Welke eigenschap vind jij het belangrijkst</p>
+            <input type="radio" id="answer10a" name="answer10" value="a">
+            <label for="answer10a">Eerlijkheid</label><br>
+            <input type="radio" id="answer10b" name="answer10" value="b">
+            <label for="answer10b">Betrouwbaarheid</label><br>
+            <input type="radio" id="answer10c" name="answer10" value="c">
+            <label for="answer10c">Ambitieus</label><br>
+            <input type="radio" id="answer10d" name="answer10" value="d">
+            <label for="answer10d">Zorgzaam</label>
+        </div>
+
+        <div class="buttons">
+        <button type="button" disabled class="button previous"> <p>terug</p> </button>
+        <button type="button" class="button next" > <p>volgende</p> </button>
+        </div>
+
+        <button class="finish hidden">Bekijk je matches</button>
+
      </form>
 
      <div class="container hidden">
