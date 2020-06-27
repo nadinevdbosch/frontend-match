@@ -404,12 +404,16 @@ footer .taakbalk-optie-actief {
 
 .question {
     margin-bottom: 100px;
+}
+
+.display-none {
     display: none;
 }
 
 .active {
     display: block;
 }
+
 
 .quiz-questions .button {
     background-color: #1E1E1E;
@@ -431,6 +435,10 @@ footer .taakbalk-optie-actief {
 .buttons {
     display: flex;
     margin-top: -60px;
+}
+
+.button.hidden {
+    display: none;
 }
 
 
