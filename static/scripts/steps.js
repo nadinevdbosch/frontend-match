@@ -13,9 +13,9 @@ previousButton.classList.remove('hidden')
 nextButton.classList.remove('hidden')
 finishButton.classList.add('hidden')
 
-for(i = 0 ; i < bullets.length ; i++){
-    if(!questions[i].classList.contains('question')) {
-        questions[i].classList.add('question')
+for(i = 0 ; i < questions.length ; i++){
+    if(!questions[i].classList.contains('display-none')) {
+        questions[i].classList.add('display-none')
     }
 }
 
