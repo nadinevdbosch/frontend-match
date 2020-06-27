@@ -1,0 +1,28 @@
+<%- include ('includes/head.ejs') %>
+<%- include ('includes/header.ejs') %>
+
+<% for (var index = 0; index < data.length; index++) { %>
+<a class="profiel-item-link" href="/profiles/<%= data[index].naam %>">
+    <div class="profiel-item">
+        <div class="profiel-foto">
+            <img src="/uploads/<%= data[index].profielfoto %>" alt="">
+        </div>
+        <div class= "profiel-informatie">
+            <h2><%= data[index].naam %></h2>
+            <div class="match-berekening">
+                <img src="/images/hart.png" alt="">
+                <p><%= data[index].matchpercentage %>%</p>
+            </div>
+
+        </div>
+    </div>
+</a>
+<% } %>
+
+<script src="/scripts/matchPercentage.js"></script>
+
+<%- include ('includes/footer.ejs') %>
+
+
+
+
