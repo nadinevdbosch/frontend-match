@@ -32,13 +32,20 @@ nextButton.addEventListener('click', () => {
         finishButton.classList.remove('hidden');
     }
 
-    for(i = 0 ; i < bullets.length ; i++){
+    for(i = 0 ; i < questions.length ; i++){
         if(questions[i].classList.contains('active')) {
             questions[i].classList.remove('active')
         }
     }
 
+    for(i = 0 ; i < bullets.length ; i++){
+        if(bullets[i].classList.contains('current_step')) {
+            bullets[i].classList.remove('current_step')
+        }
+    }
+
     questions[currentStep - 1].classList.add('active');
+    bullets[currentStep - 1].classList.add('current_step');
 })
 
 previousButton.addEventListener('click', () => {
